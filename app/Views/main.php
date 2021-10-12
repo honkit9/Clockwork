@@ -8,5 +8,13 @@
 </head>
 <body>
         Hi there this is clockwork
+        <?php
+             echo("<br>");
+            foreach($results as $result){
+                echo( $result->id);
+                echo("<br>");
+            }
+
+        ?>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+
 class Home extends BaseController
 {
     public function index()
@@ -11,6 +12,10 @@ class Home extends BaseController
 
     public function main()
     {
-        return view('main');
+        $db = \Config\Database::connect();
+        $query   = $db->query('SELECT id,name FROM main');
+        $results = $query->getResult();
+       
+        return view('main',compact('results'));
     }
 }
